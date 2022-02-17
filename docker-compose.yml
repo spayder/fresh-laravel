@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx.dockerfile
+    ports:
+      - "8085:80"
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - php
+  php:
+    build:
+      context: .
+      dockerfile: php.dockerfile
+    volumes:
+      - ./src:/var/www/html
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: 'perchpeek'
+      MYSQL_USER: 'perchpeek'
+      MYSQL_PASSWORD: 'perchpeek_secret_password'
+      MYSQL_ROOT_PASSWORD: 'secret_password'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - db:/var/lib/mysql
+  composer:
+    build:
+      context: .
+      dockerfile: composer.dockerfile
+    volumes:
+      - ./src:/var/www/html
+    working_dir: /var/www/html
+volumes:
+  db:
