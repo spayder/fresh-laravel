@@ -33,3 +33,10 @@ To run the tests, just execute:
 
 To stop all containers run:
 ``docker-compose stop``
+
+
+We have the following urls available:
+- ``/api/tickets/open``
+- ``/api/tickets/closed``
+- ``/api/users/{email}/tickets``
+- ``/api/stats``
