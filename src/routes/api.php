@@ -15,10 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::controller(\App\Http\Controllers\TicketController::class)->group(function () {
-   Route::get('tickets/open', 'unprocessed')->name('tickets.unprocessed');
-   Route::get('tickets/closed', 'processed')->name('tickets.processed');
    Route::get('stats', 'stats')->name('tickets.stats');
 });
-
-Route::get('users/{email}/tickets', [\App\Http\Controllers\UserController::class, 'tickets'])
-    ->name('users.tickets');

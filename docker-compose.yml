@@ -18,11 +18,12 @@ services:
     volumes:
       - ./src:/var/www/html
   db:
+    platform: linux/amd64
     image: mysql:5.7
     environment:
-      MYSQL_DATABASE: 'perchpeek'
-      MYSQL_USER: 'perchpeek'
-      MYSQL_PASSWORD: 'perchpeek_secret_password'
+      MYSQL_DATABASE: 'fresh'
+      MYSQL_USER: 'fresh'
+      MYSQL_PASSWORD: 'fresh_secret_password'
       MYSQL_ROOT_PASSWORD: 'secret_password'
     ports:
       - '3306:3306'
