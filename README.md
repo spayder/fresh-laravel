@@ -1,4 +1,4 @@
-# Perchpeek technical exercise 
+# Fresh Laravel installation, ready to start coding
 
 ### How to run the project on local environment (docker dependency):
 1. Build and run the project
@@ -12,9 +12,9 @@
    ``docker-compose run --rm php php artisan key:generate``
 4. copy .env.example .env in ``src`` directory
 5. In .env change the following params:
-    1. ``DB_DATABASE=perchpeek``
-    2. ``DB_USERNAME=perchpeek``
-    3. ``DB_PASSWORD=perchpeek_secret_password``
+    1. ``DB_DATABASE=fresh``
+    2. ``DB_USERNAME=fresh``
+    3. ``DB_PASSWORD=fresh_secret_password``
     4. ``DB_HOST=db``
 
 6. At this stage we need to create the database. For that just run:
@@ -33,10 +33,3 @@ To run the tests, just execute:
 
 To stop all containers run:
 ``docker-compose stop``
-
-
-We have the following urls available:
-- ``/api/tickets/open``
-- ``/api/tickets/closed``
-- ``/api/users/{email}/tickets``
-- ``/api/stats``
