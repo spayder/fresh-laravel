@@ -22,12 +22,6 @@
 
 The application by default is listening on port ``8085`` so the url will be: ``localhost:8085``
 
-The application generates a ticket every minute and process all opened tickets every 5 minutes.
-For that we need to run the scheduler:
-
-``docker-compose run --rm php php artisan schedule:work``
-
-
 To run the tests, just execute:
 ``docker-compose run --rm php ./vendor/bin/phpunit``
 
