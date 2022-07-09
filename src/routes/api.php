@@ -13,7 +13,3 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::controller(\App\Http\Controllers\TicketController::class)->group(function () {
-   Route::get('stats', 'stats')->name('tickets.stats');
-});
